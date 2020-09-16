@@ -18,8 +18,7 @@ def create_presigned_url(bucket_name, object_name, AWS_REGION,expiration=3600):
 def upload_to_s3(local_file, bucket_name, s3_file):
     s3 = boto3.resource('s3')
     try:
-        s3.meta.client.upload_file(local_file, bucket_name, s3_file,
-        ExtraArgs={'ServerSideEncryption': 'AES256'})
+        s3.meta.client.upload_file(local_file, bucket_name, s3_file)
         return True
     except FileNotFoundError:
         print("The file was not found")

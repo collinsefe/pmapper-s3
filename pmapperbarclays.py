@@ -15,7 +15,8 @@ def lambda_handler(event, context):
 
     bucketName = event['bucketname']
     bucketRegion = event['bucketregion']
-    
+    s3ObjectName = event['s3objectname']
+
     parser = argparse.ArgumentParser()
     parser.add_argument('--profile', default='default')
     parser.add_argument('--format', default='text', choices=['text', 'json'])
@@ -25,9 +26,9 @@ def lambda_handler(event, context):
     session = botocore_tools.get_session(parsed_args.profile)
     graph_obj = graph_actions.create_new_graph(session, checker_map.keys())
     
-    dateNow = datetime.now()
-    unique_outputFile = "output_" + dateNow.strftime("%H-%M-%S-%f")
-    s3ObjectName = unique_outputFile + '.svg'
+    #dateNow = datetime.now()
+    #unique_outputFile = "output_" + dateNow.strftime("%H-%M-%S-%f")
+    #s3ObjectName = unique_outputFile + '.svg'
 
 
     filePath = LOCAL_STORAGE_PATH + s3ObjectName

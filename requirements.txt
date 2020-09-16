@@ -1,5 +1,0 @@
-botocore
-packaging
-python-dateutil
-pydot
-graphviz
