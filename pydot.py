@@ -1908,9 +1908,13 @@ class Dot(Graph):
 
         #arguments = ['-T{}'.format(format), ] + args + [tmp_name]
         
-        # Changes made to enable use of static binary code -----Collins
+        # This code was added to enable us use the static binary code in link below -----Collins
+        # https://lifeinplaintextblog.wordpress.com/deploying-graphviz-on-aws-lambda
+ 
         os.popen('./dot_static' + ' ' + '-T' + format + ' ' + tmp_name + ' ' + '-o ' + mypath)
-        # End of my change ----Collins
+
+        
+        # The rest of the code was commented out as part my changes ----Collins
 
         '''try:
             stdout_data, stderr_data, process = call_graphviz(
