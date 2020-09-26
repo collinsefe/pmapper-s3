@@ -149,6 +149,18 @@ The outputs from `analysis` can be in text or JSON format, and can be created wi
 pmapper analysis --output-type text
 ~~~
 
+Analysis 
+principalmapper.analysis.find_risks: 
+function gen_findings_and_print: dumps findings in markdown(text)/JSON format to stdout. Wraps around gen_report, which can be used instead for custom formatting by pulling Report and Finding objects.
+
+principalmapper.analysis.report: 
+class Report: a simple object containing metadata about generated findings (account ID, date, version of PMapper). 
+
+principalmapper.analysis.finding: 
+class Finding: a simple object containing data about a risk to the AWS account. 
+ 
+
+
 # Credentials and Global Parameters
 
 PMapper grabs credentials in the following order:
